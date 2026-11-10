@@ -1,0 +1,29 @@
+{
+  "name": "tp4-version2",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "malena carabajal",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "start:local": "node --env-file=.env src/index.js",
+    "format": "prettier --write src scripts",
+    "format:check": "prettier --check src scripts",
+    "lint": "eslint src scripts",
+    "check": "npm run format:check && npm run lint"
+  },
+  "dependencies": {
+    "ejs": "^7.0.1",
+    "express": "^5.3.0",
+    "express-ejs-layouts": "^2.5.1",
+    "mongoose": "9.10.3",
+    "morgan": "^1.12.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.14.0",
+    "prettier": "^3.9.10"
+  }
+}

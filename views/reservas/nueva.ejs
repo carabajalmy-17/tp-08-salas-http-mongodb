@@ -1,0 +1,41 @@
+<section class="panel-formulario">
+    <p class="etiqueta">NUEVA RESERVA</p>
+    <h1>
+        <%= titulo %>
+    </h1>
+    <% if (error) { %>
+        <p class="error" role="alert">
+            <%= error %>
+        </p>
+        <% } %>
+            <form action="/reservas" method="post" class="formulario">
+                <label for="estudiante">Estudiante</label>
+                <input id="estudiante" name="estudiante" value="<%= valores?.estudiante ?? '' %>" required>
+
+                 <label for="email">Email: </label>
+                 <input type="email" id="email" name="email" value="<%= valores?.email ?? '' %>" required>
+
+                 <label for="sala">Sala</label>
+                 <select name="sala" id="sala" value="<%= valores?.sala ?? '' %>" required>
+                    <option value="">seleccionar sala</option>
+                    <option value="Sala Norte" <%= valores?.sala === "Sala Norte" ? "selected" : "" %></option>Sala Norte</option>
+                    <option value="Sala Sur" <%= valores?.sala === "Sala Sur" ? "selected" : "" %></option>Sala Sur</option>
+                    <option value="Sala Multimedia" <%= valores?.sala === "Sala Multimedia" ? "selected" : "" %></option>Sala Multimedia</option>
+                 </select>
+
+                 <label for="fecha"> Fecha</label>
+                 <input type="date" name="fecha" id="fecha" value="<%= valores?.fecha ?? '' %>" required>
+
+                 <label for="turno"> Turno</label>
+                 <select name="turno" id="turno" value="<%= valores?.turno ?? '' %>" required>
+                    <option value="">seleccionar Turno</option>
+                    <option value="Mañana" <%= valores?.turno === "Turno Mañana" ? "selected" : "" %></option>Turno Mañana</option>
+                    <option value="Tarde" <%= valores?.turno === "Turno Tarde" ? "selected" : "" %></option>Turno Tarde</option>
+                    <option value="Noche" <%= valores?.turno === "Turno Noche" ? "selected" : "" %></option>Turno Noche</option>
+                 </select>
+
+                 <label for="personas">Cantidad de personas</label>
+                 <input id="personas" name="personas"min="1" max="6" step="1" value="<%= valores?.personas ?? '' %>" required>
+                <button type="submit">Guardar reserva</button>
+            </form>
+</section>
